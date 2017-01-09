@@ -59,3 +59,31 @@ chunkify( ) — returns an iterable that periodically returns a list of items 
 collect( ) — collects items emitted by the source Observable into a single mutable data structure and returns an Observable that emits this structure
              收集items，被源可观察者释放到一个单独的mutable data structure（一个可变的数据结构），并且返回一个释放该structure的可观察者。
 
+combineLatest( ) — when an item is emitted by either of two Observables, combine the latest item emitted by each Observable via a specified function and emit items based on the results of this function
+                   当一个Item被两个源可观察者中的任意一个所释放时，使最后的一个item被每一个源可观察者通过一种特殊的方法所释放，并且基于这个方法的返回结果释放所有的Items。
+                   
+combineLatestWith( ) (scala) — instance version of combineLatest( )
+                               combineLatest( )的实例版本。
+                               
+concat( ) — concatenate two or more Observables sequentially
+            按顺序连接两个或两个以上的源可观察者。
+            
+concatMap( ) — transform the items emitted by an Observable into Observables, then flatten this into a single Observable, without interleaving
+               将一个源可观察者所释放的Items转变为多个可观察者，然后压平成一个单独的没有交叉的可观察者。
+               
+concatWith( ) — instance version of concat( )
+                concat( )的实例版本。
+                
+connect( ) — instructs a Connectable Observable to begin emitting items
+             命令一个可连接的Observable开始释放Item。
+             
+cons( ) (clojure) — see concat( )
+
+contains( ) — determine whether an Observable emits a particular item or not
+              确定一个源可观察者是否释放了一个特定的Item。
+              
+count( ) — counts the number of items emitted by an Observable and emits this count
+           统计一个可观察者释放出的Item的数量并且释放这个数。
+           
+countLong( ) — counts the number of items emitted by an Observable and emits this count
+               统计一个可观察者释放出的Item的数量并且释放这个数。
