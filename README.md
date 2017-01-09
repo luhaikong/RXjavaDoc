@@ -165,3 +165,77 @@ elementAtOrDefault( ) — emit item n emitted by the source Observable, or a d
                         
 empty( ) — create an Observable that emits nothing and then completes
            创建一个不能释放任何数据的可观察者然后完成。
+
+encode( ) (StringObservable) — transform an Observable that emits strings into an Observable that emits byte arrays that respect character boundaries of multibyte characters in the original strings
+                                转换一个释放字符串的可观察者为一个释放字节数组（尊重多字节字符的字符边界在原始字符串）的可观察者。
+
+error( ) — create an Observable that emits nothing and then signals an error
+           创建一个可观察者释放nothing然后表示一个错误。
+
+every( ) (clojure) — see all( )
+
+exists( ) — determine whether an Observable emits any items or not
+            确定一个可观察者是否已经发出Items。
+
+filter( ) — filter items emitted by an Observable
+            过滤被一个可观察者所释放的Items。
+
+finally( ) (clojure) — see finallyDo( )
+filterNot( ) (scala) — see filter( )
+
+finallyDo( ) — register an action to take when an Observable completes
+               当一个可观察者成功完成时注册一个行动。
+
+first( ) (Observable) — emit only the first item emitted by an Observable, or the first item that meets some condition
+                         释放第一个被可观察者释放的Item，或者满足某种条件的第一项Item。
+
+first( ) (BlockingObservable) — emit only the first item emitted by an Observable, or the first item that meets some condition
+                                 释放第一个被可观察者释放的Item，或者满足某种条件的第一项Item。
+
+firstOrDefault( ) (Observable) — emit only the first item emitted by an Observable, or the first item that meets some condition, or a default value if the source Observable is empty
+                                 释放第一个被可观察者释放的Item，或者满足某种条件的第一项Item，再或者一个默认的值（如果源可观察者是空的）。
+
+firstOrDefault( ) (BlockingObservable) — emit only the first item emitted by an Observable, or the first item that meets some condition, or a default value if the source Observable is empty
+                                         释放第一个被可观察者释放的Item，或者满足某种条件的第一项Item，再或者一个默认的值（如果源可观察者是空的）。
+
+firstOrElse( ) (scala) — see firstOrDefault( ) or firstOrDefault( ) (BlockingObservable)
+
+flatMap( ) — transform the items emitted by an Observable into Observables, then flatten this into a single Observable
+             将一个源可观察者所释放的Items转变为多个可观察者，然后压平成一个单独的没有交叉的可观察者。
+
+flatMapIterable( ) — create Iterables corresponding to each emission from a source Observable and merge the results into a single Observable
+                     创建一个Iterables与每一个来自源可观察者的排放源相匹配，并且合并这些结果在一个单独的可观察者中。
+
+flatMapIterableWith( ) (scala) — instance version of flatMapIterable( )
+flatMapWith( ) (scala) — instance version of flatmap( )
+flatten( ) (scala) — see merge( )
+flattenDelayError( ) (scala) — see mergeDelayError( )
+foldLeft( ) (scala) — see reduce( )
+forall( ) (scala) — see all( )
+forEach( ) (Observable) — see subscribe( )
+
+forEach( ) (BlockingObservable) — invoke a function on each item emitted by the Observable; block until the Observable completes
+                                  在可观察者发出每个Item时调用一个函数;阻塞,直到可观查者的完成。
+
+forEachFuture( ) (Async) — pass Subscriber methods to an Observable but also have it behave like a Future that blocks until it completes (rxjava-async)
+                           传递订阅一个可观察者，并且持有一个未来的变量，阻塞直到它完成。
+
+forEachFuture( ) (BlockingObservable)— create a futureTask that will invoke a specified function on each item emitted by an Observable (⁇)
+                                       创建一个未来的任务在每一个可观察者所释放的Item中调用一个特定的方法。
+
+forIterable( ) — apply a function to the elements of an Iterable to create Observables which are then concatenated (⁇)
+                  对Iterable中的所有元素应用一个方法来创建可串联的可观察者序列。
+
+from( ) — convert an Iterable, a Future, or an Array into an Observable
+          转换一个Iterable、Future或者一个Array为一个可观察者。
+
+from( ) (StringObservable) — convert a stream of characters or a Reader into an Observable that emits byte arrays or Strings
+                             转换一连串的字符或者读物为一个可观察者（释放字节数组或字符串）。
+
+fromAction( ) — convert an Action into an Observable that invokes the action and emits its result when a Subscriber subscribes (rxjava-async)
+                转换一个动作为一个可观察者（调用这个动作并且释放它的结果，当订阅者订阅以后）。
+
+fromCallable( ) — convert a Callable into an Observable that invokes the callable and emits its result or exception when a Subscriber subscribes (rxjava-async)
+                   转换一个Callable 为一个可观察者（调用这个callable 并且释放它的结果或者异常，当订阅者订阅以后）。
+
+fromCancellableFuture( ) — convert a Future into an Observable in a way that monitors the subscription status of the Observable to determine whether to halt work on the Future, but do not attempt to get the Future's value until a Subscriber subscribes (⁇)(rxjava-async)
